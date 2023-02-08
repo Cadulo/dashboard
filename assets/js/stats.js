@@ -1,8 +1,8 @@
 
-loadData=()=>{
-    let chartRef1 = document.getElementById("chart-bars").getContext("2d");
+let loadData=()=>{
+  let chartRef1 = document.getElementById("chart-bars").getContext("2d");
 
-    let chart1=new Chart(ctx, {
+    let chart1=new Chart(chartRef1, {
       type: "bar",
       data: {
         labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -81,9 +81,9 @@ loadData=()=>{
     });
 
 
-let chartRef2 = document.getElementById("chart-line").getContext("2d");
+  let chartRef2 = document.getElementById("chart-line").getContext("2d");
 
-    let chart2=new Chart(ctx2, {
+    let chart2=new Chart(chartRef2, {
       type: "line",
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -164,9 +164,9 @@ let chartRef2 = document.getElementById("chart-line").getContext("2d");
       },
     });
 
-let chartRef3= document.getElementById("chart-line-tasks").getContext("2d");
+  let chartRef3= document.getElementById("chart-line-tasks").getContext("2d");
 
-    let chart3=new Chart(ctx3, {
+    let chart3=new Chart(chartRef3, {
       type: "line",
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -245,6 +245,10 @@ let chartRef3= document.getElementById("chart-line-tasks").getContext("2d");
         },
       },
     });
+  
+  let newData = [100, 80, 60, 40, 20, 10, 1];
+  chart1.data.datasets[0].data= newData;
+  
 }
 
 loadData()
